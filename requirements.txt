@@ -21,7 +21,6 @@ MarkupSafe==1.0
 ndg-httpsclient==0.4.0
 pyasn1==0.1.9
 Pygments==2.1
-pygobject==3.20.0
 pyOpenSSL==0.15.1
 PyYAML==3.11
 ranger==1.7.1
