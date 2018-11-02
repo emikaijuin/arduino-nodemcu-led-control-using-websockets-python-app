@@ -1,6 +1,5 @@
 beautifulsoup4==4.4.1
 chardet==2.3.0
-cliapp==1.20160109
 Click==7.0
 cryptography==1.2.3
 enum34==1.1.2
