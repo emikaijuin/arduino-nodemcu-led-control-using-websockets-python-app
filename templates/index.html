@@ -14,7 +14,6 @@
 		// Setting up the websocket (client-side)
 		var webSocket;
 		webSocket = new WebSocket('ws://' + window.location.hostname + ':80/subscribe'); // for production
-    console.log(window.location.hostname)
 		webSocket.onmessage = function(event) { onMessage(event); }
 		// User-defined functions
 		function hexToRgb(hex) {
