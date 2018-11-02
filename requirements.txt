@@ -23,7 +23,6 @@ pyasn1==0.1.9
 Pygments==2.1
 pyOpenSSL==0.15.1
 PyYAML==3.11
-ranger==1.7.1
 requests==2.9.1
 six==1.10.0
 ttystatus==0.32
