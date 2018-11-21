@@ -14,7 +14,12 @@
 	<script type="text/javascript">
 		// Setting up the websocket (client-side)
 		var webSocket;
-		webSocket = new WebSocket('wss://' + window.location.hostname + ':80/subscribe'); // for production
+		if (window.location.protocol == "https") {
+			var ws_scheme = "wss://";
+		} else {
+			var ws_scheme = "ws://";
+		}
+		webSocket = new WebSocket(ws_scheme + window.location.hostname + ':80/subscribe'); // for production
 		webSocket.onmessage = function(event) { onMessage(event); }
 		// User-defined functions
 		function hexToRgb(hex) {
