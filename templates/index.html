@@ -3,17 +3,20 @@
 	<div>
 		<!-- Get the desired color of an LED -->
 		<fieldset>
-			<legend>Choose wisely!</legend>
+			<legend>Choose a color!</legend>
 			<div>
 				<input type="color" id="led-color" value="#000000" oninput="sendrgb()" />
 				<label for="led-color">LED Color</label>
+				<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+				<link rel="stylesheet" href="../static/styles.css">
 			</div>
 		</fieldset>
 	</div>
+
 	<script type="text/javascript">
 		// Setting up the websocket (client-side)
 		var webSocket;
-		webSocket = new WebSocket('ws://' + window.location.hostname + ':80/subscribe'); // for production
+		webSocket = new WebSocket('wss://' + window.location.hostname + ':80/subscribe'); // for production
 		webSocket.onmessage = function(event) { onMessage(event); }
 		// User-defined functions
 		function hexToRgb(hex) {
