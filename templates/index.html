@@ -19,7 +19,8 @@
 		} else {
 			var ws_scheme = "ws://";
 		}
-		webSocket = new WebSocket(ws_scheme + window.location.hostname + '/subscribe'); // for production
+		// webSocket = new WebSocket(ws_scheme + window.location.hostname + '/subscribe'); // for production
+		webSocket = new WebSocket(ws_scheme + window.location.hostname + ":8000/subscribe")
 		webSocket.onmessage = function(event) { onMessage(event); }
 		// User-defined functions
 		function hexToRgb(hex) {
@@ -38,6 +39,11 @@
 		function onMessage(event) {
 			console.log(event.data);
 		}
+		// Keep websocket open by continuously pinging
+		function pingServer(){
+			webSocket.send("");
+		}
+		setInterval(pingServer,50000);
 	</script>
 
 </body>
