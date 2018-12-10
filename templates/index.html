@@ -19,8 +19,7 @@
 		} else {
 			var ws_scheme = "ws://";
 		}
-		// webSocket = new WebSocket(ws_scheme + window.location.hostname + '/subscribe'); // for production
-		webSocket = new WebSocket(ws_scheme + window.location.hostname + ":8000/subscribe")
+		webSocket = new WebSocket(ws_scheme + window.location.hostname + '/subscribe'); // for production
 		webSocket.onmessage = function(event) { onMessage(event); }
 		// User-defined functions
 		function hexToRgb(hex) {
