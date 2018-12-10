@@ -60,10 +60,11 @@ def read_ws(ws, client):
 		gevent.sleep(0)
 		try:
 			msg = ws.receive() # This command blocks!
-			print "WS RECEIVED: %s" % msg
 			if(msg is None):
+				print "WS RECEIVED: %s" % msg # Move print statements to individual cases rather than on every received input to avoid continuously printing messages on interval ping from client
 				client.put(msg)
 			elif (is_json(msg)):
+				print "WS RECEIVED: %s" % msg
 				send_all_json(json.loads(msg)) # Assuming the data is properly formatted :)
 			else:
 				raise ValueError('Not a JSON string')
